@@ -10,8 +10,8 @@ pipeline {
   environment {
     IMAGE     = 'anuragjnaik/cicdproject'
     TAG       = "${BUILD_NUMBER}"
-    TEST_HOST = 'ubuntu@<172.31.10.224>'
-    APP_URL   = 'http://<172.31.10.224>:8080'
+    TEST_HOST = 'ubuntu@172.31.10.224'
+    APP_URL   = 'http://172.31.10.224:8080'
   }
 
   stages {
