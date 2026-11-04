@@ -8,7 +8,7 @@ pipeline {
   }
 
   environment {
-    IMAGE     = 'anuragjnaik/cicdproject'
+    IMAGE     = 'anuragjnaik/cicd-sakha'
     TAG       = "${BUILD_NUMBER}"
     TEST_HOST = 'ubuntu@172.31.10.224'
     APP_URL   = 'http://172.31.10.224:8080'
@@ -56,7 +56,7 @@ stage('Analyzing Code Quality') {
           -Dsonar.tests=tests \
           -Dsonar.python.coverage.reportPaths=coverage.xml \
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.token=$sonartoken
+          -Dsonar.token=$SONAR_TOKEN
       '''
     }
   }
