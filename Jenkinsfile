@@ -47,7 +47,7 @@ pipeline {
 
 stage('Analyzing Code Quality') {
   steps {
-    withCredentials([string(credentialsId: 'sonartoken', variable: 'SONAR_TOKEN')]) {
+    withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
       sh '''
         /opt/sonar-scanner/bin/sonar-scanner \
           -Dsonar.projectKey=sakhaglobal_cicd-sakha \
@@ -55,7 +55,7 @@ stage('Analyzing Code Quality') {
           -Dsonar.sources=app \
           -Dsonar.tests=tests \
           -Dsonar.python.coverage.reportPaths=coverage.xml \
-          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.token=$SONAR_TOKEN
       '''
     }
