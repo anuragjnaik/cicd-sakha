@@ -56,6 +56,7 @@ stage('Analyzing Code Quality') {
           -Dsonar.tests=tests \
           -Dsonar.python.coverage.reportPaths=coverage.xml \
           -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.token=$sonartoken
       '''
     }
   }
