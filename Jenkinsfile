@@ -64,7 +64,7 @@ stage('Analyzing Code Quality') {
 }
 
     stage('Build Docker image') {
-      steps { sh 'docker build -t  anuragjnaik/cicd-sakha:latest -f Dockerfile .' }
+      steps { sh 'docker build -t $IMAGE:$TAG -t $IMAGE:latest .' }
     }
 
     stage('Trivy image scan') {
