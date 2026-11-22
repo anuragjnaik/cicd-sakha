@@ -5,3 +5,4 @@ coverage.xml
 test-results.xml
 trivy-report.txt
 *.pem
+monitoring/alertmanager/alertmanager.yml
